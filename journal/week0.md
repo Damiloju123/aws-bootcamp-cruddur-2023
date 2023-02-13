@@ -73,3 +73,52 @@ aws budgets create-budget \
 ```
 
 ![User Graphic](_docs/week0/Budget.JPG)
+
+
+## Set up Billing & Created a Billing Alarm
+
+To receive alerts the Billing Alerts has to be put on
+
+This was done via the Root Account, under the `Billing Preferences` in the Billing Section
+
+![User Graphic](_docs/week0/Billing.JPG)
+
+
+## Creating the Billing Alarm
+
+### Created SNS Topic
+
+This is required before proceeding to create an alarm.
+
+This was done using the AWS Documentation [aws sns create-topic](https://docs.aws.amazon.com/cli/latest/reference/sns/create-topic.html)
+
+The command below was run to return the TopicARN.
+
+```sh
+aws sns create-topic --name billing-alarm
+```
+![User Graphic](_docs/week0/Topics.JPG)
+
+Created a Subscription with the TopicARN Output & Email Address
+
+```sh
+aws sns subscribe \
+    --topic-arn TopicARN \
+    --protocol email \
+    --notification-endpoint your@email.com
+```
+
+Received email and confirmed the subscription
+
+![User Graphic](_docs/week0/SNS.JPG)
+
+### Created Alarm
+
+This was done using the AWS Documentation [aws cloudwatch put-metric-alarm](https://docs.aws.amazon.com/cli/latest/reference/cloudwatch/put-metric-alarm.html)
+For creation via CLI, [Create an Alarm via AWS CLI](https://aws.amazon.com/premiumsupport/knowledge-center/cloudwatch-estimatedcharges-alarm/)
+
+```sh
+aws cloudwatch put-metric-alarm --cli-input-json file://aws/json/alarm_config.json
+```
+
+![User Graphic](_docs/week0/Alarm.JPG)
