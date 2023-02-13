@@ -32,7 +32,7 @@ The steps below were used to accomplish this task
 - Chose AWS CLI Access
 - Downloaded the CSV with the credentials
 
-![User Graphic](_docs/assets/week0/Users.JPG)
+![User Graphic](_docs/assets/Users.JPG)
 
 
 ### Set the Environment Vars
@@ -52,7 +52,7 @@ gp env AWS_DEFAULT_REGION=us-east-1
 aws sts get-caller-identity
 ```
 
-![User Graphic](_docs/assets/week0/STS.JPG)
+![User Graphic](_docs/assets/STS.JPG)
 
 ## Created AWS Budgets
 
@@ -72,7 +72,7 @@ aws budgets create-budget \
     --notifications-with-subscribers file://aws/json/budget-notifications-with-subscribers.json
 ```
 
-![User Graphic](_docs/assets/week0/Budget.JPG)
+![User Graphic](_docs/assets/Budget.JPG)
 
 
 ## Set up Billing & Created a Billing Alarm
@@ -81,7 +81,7 @@ To receive alerts the Billing Alerts has to be put on
 
 This was done via the Root Account, under the `Billing Preferences` in the Billing Section
 
-![User Graphic](_docs/assets/week0/Billing.JPG)
+![User Graphic](_docs/assets/Billing.JPG)
 
 
 ## Creating the Billing Alarm
@@ -97,7 +97,7 @@ The command below was run to return the TopicARN.
 ```sh
 aws sns create-topic --name billing-alarm
 ```
-![User Graphic](_docs/assets/week0/Topics.JPG)
+![User Graphic](_docs/assets/Topics.JPG)
 
 Created a Subscription with the TopicARN Output & Email Address
 
@@ -110,7 +110,7 @@ aws sns subscribe \
 
 Received email and confirmed the subscription
 
-![User Graphic](_docs/assets/week0/SNS.JPG)
+![User Graphic](_docs/assets/SNS.JPG)
 
 ### Created Alarm
 
@@ -121,4 +121,4 @@ For creation via CLI, [Create an Alarm via AWS CLI](https://aws.amazon.com/premi
 aws cloudwatch put-metric-alarm --cli-input-json file://aws/json/alarm_config.json
 ```
 
-![User Graphic](_docs/assets/week0/Alarm.JPG)
+![User Graphic](_docs/assets/Alarm.JPG)
