@@ -1,8 +1,8 @@
 # Week 0 — Billing and Architecture
 
-### AWS CLI
+## AWS CLI
 
-### Set up AWS CLI
+### Setting up AWS CLI
 - Installed AWS CLI on Gitpod following the [AWS CLI Install Instructions] (https://docs.aws.amazon.com/cli/latest/userguide/getting-started-install.html)
 - Updated my .gitpod.yml to include the below:
 
@@ -24,13 +24,14 @@ tasks:
 The steps below were used to accomplish this task
 
 - Searched for IAM Users via the home Console
-- Created a new user Damiloju
-- Enabled console access for the user Damiloju
+- Created a new `user` Damiloju
+- Enabled console access for the `user` Damiloju
 - Created a new `Admin` Group and apply `AdministratorAccess`
-- Created the user and selected the user
+- Created the `user` and selected the `user`
 - Selected the `Security Credentials` and `Create Access Key`
 - Chose AWS CLI Access
 - Downloaded the CSV with the credentials
 
 ![User Graphic](_docs/week0/Users.JPG)
 
+![Cruddur Graphic](_docs/assets/cruddur-banner.jpg)
