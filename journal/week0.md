@@ -84,6 +84,7 @@ This was done via the Root Account, under the `Billing Preferences` in the Billi
 ![User Graphic](https://github.com/Damiloju123/aws-bootcamp-cruddur-2023/blob/3a2a0fad875a758d5e3b0c7b4a175b6b3ed0bb6c/_docs/assets/Billing.JPG)
 
 
+
 ## Creating the Billing Alarm
 
 ### Created SNS Topic
@@ -122,3 +123,8 @@ aws cloudwatch put-metric-alarm --cli-input-json file://aws/json/alarm_config.js
 ```
 
 ![User Graphic](https://github.com/Damiloju123/aws-bootcamp-cruddur-2023/blob/3a2a0fad875a758d5e3b0c7b4a175b6b3ed0bb6c/_docs/assets/Alarm.JPG)
+
+
+### Created Conceptual Diagram in Lucid Charts
+
+### Created Logical Architectual Diagram in Lucid Charts
