@@ -129,6 +129,10 @@ aws cloudwatch put-metric-alarm --cli-input-json file://aws/json/alarm_config.js
 
 ![image](https://github.com/Damiloju123/aws-bootcamp-cruddur-2023/blob/6056a8a3e71953a9ed5c524c66c3178c862fff54/_docs/assets/Napkin.JPG)
 
-- Created [Conceptual Diagram](https://lucid.app/lucidchart/invitations/accept/inv_b8735dcc-9946-4f64-84e2-72d524e319d6)
+- Created [Conceptual Diagram](https://lucid.app/lucidchart/69c03ed7-c4a5-48db-b8a0-dbf31d560cd3/edit?invitationId=inv_b8735dcc-9946-4f64-84e2-72d524e319d6)
 
 ### Created Logical Architectual Diagram in Lucid Charts
+ 
+![Logical](https://github.com/Damiloju123/aws-bootcamp-cruddur-2023/blob/78c80b48ec69dc44138c9699fef5f73ff0215351/_docs/assets/Cruddur%20Logical%20Diagam.jpeg)
+
+- Created [Logical Diagram](https://lucid.app/lucidchart/803dcdc3-e838-4c06-82ec-0175cadb9775/edit?invitationId=inv_4fef0bc9-51bd-44ea-a7ca-23c29a5c1c86)
