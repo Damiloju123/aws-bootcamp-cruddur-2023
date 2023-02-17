@@ -52,8 +52,6 @@ gp env AWS_DEFAULT_REGION=us-east-1
 aws sts get-caller-identity
 ```
 
-![User Graphic](https://github.com/Damiloju123/aws-bootcamp-cruddur-2023/blob/3a2a0fad875a758d5e3b0c7b4a175b6b3ed0bb6c/_docs/assets/STS.JPG)
-
 ## Created AWS Budgets
 
 ## Created a Zero Sped Budget
