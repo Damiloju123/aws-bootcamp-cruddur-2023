@@ -9,6 +9,13 @@ services:
       - "4567:4567"
     volumes:
       - ./backend-flask:/backend-flask
+    healthcheck:
+      test: nc -z localhost 4567 || exit -1
+      interval: 10s
+      timeout: 5s
+      retries: 3
+      start_period: 10s
+
   frontend-react-js:
     environment:
       REACT_APP_BACKEND_URL: "https://4567-${GITPOD_WORKSPACE_ID}.${GITPOD_WORKSPACE_CLUSTER_HOST}"
@@ -17,6 +24,13 @@ services:
       - "3000:3000"
     volumes:
       - ./frontend-react-js:/frontend-react-js
+    healthcheck:
+      test: nc -z localhost 3000 || exit -1
+      interval: 10s
+      timeout: 5s
+      retries: 3
+      start_period: 10s
+
   dynamodb-local:
     # https://stackoverflow.com/questions/67533058/persist-local-dynamodb-data-in-volumes-lack-permission-unable-to-open-databa
     # We needed to add user:root to get this working.
@@ -29,6 +43,13 @@ services:
     volumes:
       - "./docker/dynamodb:/home/dynamodblocal/data"
     working_dir: /home/dynamodblocal
+
+    healthcheck:
+      test: nc -z localhost 4567 || exit -1
+      interval: 10s
+      timeout: 5s
+      retries: 3
+      start_period: 10s
   db:
     image: postgres:13-alpine
     restart: always
@@ -39,6 +60,12 @@ services:
       - '5432:5432'
     volumes: 
       - db:/var/lib/postgresql/data
+    healthcheck:
+      test: nc -z localhost 5432 || exit -1
+      interval: 10s
+      timeout: 5s
+      retries: 3
+      start_period: 10s
 # the name flag is a hack to change the default prepend folder
 # name when outputting the image names
 networks: 
@@ -49,3 +76,4 @@ networks:
 volumes:
   db:
     driver: local
+
