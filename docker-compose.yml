@@ -10,7 +10,7 @@ services:
     volumes:
       - ./backend-flask:/backend-flask
     healthcheck:
-      test: nc -z localhost 4567 || exit -1
+      test: ["CMD", "curl", "--fail", "http://localhost:4567"]
       interval: 10s
       timeout: 5s
       retries: 3
@@ -24,8 +24,9 @@ services:
       - "3000:3000"
     volumes:
       - ./frontend-react-js:/frontend-react-js
+    
     healthcheck:
-      test: nc -z localhost 3000 || exit -1
+      test: ["CMD", "curl", "-f", "http://localhost:3000"]
       interval: 10s
       timeout: 5s
       retries: 3
@@ -45,7 +46,7 @@ services:
     working_dir: /home/dynamodblocal
 
     healthcheck:
-      test: nc -z localhost 4567 || exit -1
+      test: ["CMD", "curl", "--fail", "http://localhost:8000"]
       interval: 10s
       timeout: 5s
       retries: 3
@@ -66,6 +67,7 @@ services:
       timeout: 5s
       retries: 3
       start_period: 10s
+
 # the name flag is a hack to change the default prepend folder
 # name when outputting the image names
 networks: 
