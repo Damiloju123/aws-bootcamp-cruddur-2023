@@ -22,8 +22,12 @@ For the week 1 course, I was able to acheive the tasks listed below:
 
 - Launched an EC2 instance with docker installed, and pulled a container to run my docker processes. 
 
+## Built and Run Cruddur Website
+
 ## Created the Notification Section on the Cruddur Application.
 
 ## Tagged and Pushed images created  to DockerHub.
+
+## Implemented healthcheck in the Docker compose file.
 
 ## Launched an EC2 instance with docker installed, and pulled a container to run my docker processes. 
