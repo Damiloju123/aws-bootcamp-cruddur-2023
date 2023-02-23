@@ -77,7 +77,7 @@ This was done by adding the section below to each service in the Docker Compose 
 
 ![EC2 Instance](https://github.com/Damiloju123/aws-bootcamp-cruddur-2023/blob/18fca63e84c3e14af710318df133292046d0b7fd/_docs/assets/EC2.JPG)
 
-- Installed Docker 
+- Installed Docker on Ubuntu following these [steps](https://docs.docker.com/engine/install/ubuntu/)
 
 ![Docker](https://github.com/Damiloju123/aws-bootcamp-cruddur-2023/blob/18fca63e84c3e14af710318df133292046d0b7fd/_docs/assets/Docker%20Install.JPG)
 
