@@ -14,6 +14,7 @@ services:
       - "4567:4567"
     volumes:
       - ./backend-flask:/backend-flask
+
     healthcheck:
       test: ["CMD", "curl", "--fail", "http://localhost:4567"]
       interval: 10s
@@ -67,6 +68,7 @@ services:
       timeout: 5s
       retries: 3
       start_period: 10s
+      
   db:
     image: postgres:13-alpine
     restart: always
