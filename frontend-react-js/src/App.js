@@ -43,8 +43,6 @@ honeycombInit({
   serviceName: process.env.HONEYCOMB_SERVICE_NAME,
 });
 
-import { startTrace, finishTrace } from 'honeycomb-beeline';
-
 async function fetchData(url, options) {
   const trace = startTrace({ name: 'fetchData' });
 
