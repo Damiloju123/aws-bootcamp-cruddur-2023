@@ -11,8 +11,6 @@ import MessageGroupPage from './pages/MessageGroupPage';
 import ConfirmationPage from './pages/ConfirmationPage';
 import React from 'react';
 
-
-
 import {
   createBrowserRouter,
   RouterProvider
@@ -35,26 +33,6 @@ Amplify.configure({
   }
 });
 
-import { init as honeycombInit, startTrace } from 'honeycomb-beeline';
-
-honeycombInit({
-  writeKey: process.env.HONEYCOMB_API_KEY,
-  dataset: process.env.HONEYCOMB_DATASET_NAME,
-  serviceName: process.env.HONEYCOMB_SERVICE_NAME,
-});
-
-async function fetchData(url, options) {
-  const trace = startTrace({ name: 'fetchData' });
-
-  try {
-    const response = await fetch(url, options);
-    finishTrace(trace);
-    return response.json();
-  } catch (error) {
-    finishTrace(trace);
-    throw error;
-  }
-}
 
 const router = createBrowserRouter([
   {
@@ -104,7 +82,3 @@ function App() {
 }
 
 export default App;
-
-export  {
-  fetchData,
-};
