@@ -29,41 +29,17 @@ Amplify.configure({
   Auth: {
     // We are not using an Identity Pool
     // identityPoolId: process.env.REACT_APP_IDENTITY_POOL_ID, // REQUIRED - Amazon Cognito Identity Pool ID
-    region: process.env.REACT_AWS_PROJECT_REGION,           // REQUIRED - Amazon Cognito Region
+    region: process.env.REACT_APP_AWS_PROJECT_REGION,           // REQUIRED - Amazon Cognito Region
     userPoolId: process.env.REACT_APP_AWS_USER_POOLS_ID,         // OPTIONAL - Amazon Cognito User Pool ID
     userPoolWebClientId: process.env.REACT_APP_AWS_USER_POOLS_WEB_CLIENT_ID,   // OPTIONAL - Amazon Cognito Web Client ID (26-char alphanumeric string)
   }
 });
 
-import { init as honeycombInit, startTrace } from 'honeycomb-beeline';
-
-honeycombInit({
-  writeKey: process.env.HONEYCOMB_API_KEY,
-  dataset: process.env.HONEYCOMB_DATASET_NAME,
-  serviceName: process.env.HONEYCOMB_SERVICE_NAME,
-});
-
-async function fetchData(url, options) {
-  const trace = startTrace({ name: 'fetchData' });
-
-  try {
-    const response = await fetch(url, options);
-    finishTrace(trace);
-    return response.json();
-  } catch (error) {
-    finishTrace(trace);
-    throw error;
-  }
-}
 
 const router = createBrowserRouter([
   {
     path: "/",
     element: <HomeFeedPage />
-  },
-  {
-    path: "/notifications",
-    element: <NotificationsFeedPage />
   },
   {
     path: "/@:handle",
@@ -101,10 +77,7 @@ function App() {
       <RouterProvider router={router} />
     </>
   );
+  
 }
 
 export default App;
-
-export  {
-  fetchData,
-};
