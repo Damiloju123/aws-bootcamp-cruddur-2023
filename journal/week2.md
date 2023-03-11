@@ -18,7 +18,7 @@ I was able to achieve the below tasks in week 2.
 
 - Instrumented the backend flask application to use Open Telemetry (OTEL) with Honeycomb.io as the provider
 
-![A](../_docs/assets/A.PNG)|
+![A](../_docs/assets/A.PNG)
 
 - Ran queries to explore traces within Honeycomb.io
 
