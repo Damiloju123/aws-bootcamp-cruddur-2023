@@ -17,11 +17,10 @@
 I was able to achieve the below tasks in week 2.
 
 - Instrumented the backend flask application to use Open Telemetry (OTEL) with Honeycomb.io as the provider
-- 
+
 ![A](../_docs/assets/A.PNG)|
 
 - Ran queries to explore traces within Honeycomb.io
-- X
 
 - Instrumented AWS X-Ray into backend flask application
 
@@ -129,16 +128,15 @@ EPOCH=$(date +%s)
 aws xray get-service-graph --start-time $(($EPOCH-600)) --end-time $EPOCH
 ```
 
-### Output
+- Output
 ![B](../_docs/assets/B.PNG)|
 
 - Observed X-Ray traces within the AWS Console
 ![C](../_docs/assets/C.PNG)|
 
-- Installed WatchTower and write a custom logger to send application log data to CloudWatch Log group
-
 
 ## CloudWatch Logs
+- Installed WatchTower and write a custom logger to send application log data to CloudWatch Log group
 
 Added the below to the `requirements.txt`
 
