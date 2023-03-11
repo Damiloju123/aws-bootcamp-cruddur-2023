@@ -1,4 +1,19 @@
 # Week 2 — Distributed Tracing
+
+## Homework
+
+| TASK | COMPLETED |
+|  --- |    ---    |
+| Watch Week 2 Live-Stream Video | :heavy_check_mark: |
+| Watch Chirag Week 2 - Spending Considerations | :heavy_check_mark: |
+| Watched Ashish's Week 2 - Observability Security Considerations | :heavy_check_mark: |
+| Instrument Honeycomb with OTEL | :heavy_check_mark: |
+| Instrument AWS X-Ray | :heavy_check_mark: |
+| Instrument AWS X-Ray Subsegments | :heavy_check_mark: |
+| Configure custom logger to send to CloudWatch Logs | :heavy_check_mark: |
+| Integrate Rollbar and capture and error | :heavy_check_mark: |
+
+
 I was able to achieve the below tasks in week 2.
 
 - Instrumented the backend flask application to use Open Telemetry (OTEL) with Honeycomb.io as the provider
