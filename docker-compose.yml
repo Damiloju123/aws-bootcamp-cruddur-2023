@@ -14,7 +14,6 @@ services:
       AWS_SECRET_ACCESS_KEY: "${AWS_SECRET_ACCESS_KEY}"
       ROLLBAR_ACCESS_TOKEN: "${ROLLBAR_ACCESS_TOKEN}"
 
-
     build: ./backend-flask
     ports:
       - "4567:4567"
@@ -27,6 +26,17 @@ services:
       timeout: 5s
       retries: 3
       start_period: 10s
+  otel-collector:
+    environment:
+      FRONTEND_URL_HTTPS: "https://3000-${GITPOD_WORKSPACE_ID}.${GITPOD_WORKSPACE_CLUSTER_HOST}"
+      FRONTEND_URL_HTTP: "http://3000-${GITPOD_WORKSPACE_ID}.${GITPOD_WORKSPACE_CLUSTER_HOST}"
+      HONEYCOMB_API_KEY: "${HONEYCOMB_API_KEY}"
+    image: otel/opentelemetry-collector
+    command: [ --config=/etc/otel-collector-config.yaml ]
+    volumes:
+      - "./otel-collector-config.yaml:/etc/otel-collector-config.yaml"
+    ports:
+      - 4318:4318 # OTLP http receiver
 
   frontend-react-js:
     environment:
