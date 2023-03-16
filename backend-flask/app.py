@@ -58,7 +58,7 @@ provider.add_span_processor(processor)
 
 # X-ray---------------
 xray_url = os.getenv("AWS_XRAY_URL")
-xray_recorder.configure(service='Cruddur', dynamic_naming=xray_url)
+xray_recorder.configure(service='backend-flask', dynamic_naming=xray_url)
 
 # OTEL---------------
 # Show this in the logs within the back-end flask app (STDOUT)
